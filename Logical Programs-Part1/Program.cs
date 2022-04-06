@@ -6,29 +6,21 @@ using System.Threading.Tasks;
 
 namespace Logical_Programs_Part1
 {
-    class FibonacciSeries
+    class ReverseNumber
     {
         static void Main(string[] args)
         {
-            int n, k= 0,r,i;
+            int number, reverse = 0,remainder;
             Console.WriteLine("enter a number");
-            n = Convert.ToInt32(Console.ReadLine());
-            for (i = 1; i <= n; i++)
+            number = Convert.ToInt32(Console.ReadLine());
+            while(number>0)
             {
-                r = n % i;
-                if (r == 0)
-                {
-                    k++;
-                }
+                remainder = number % 10;
+                reverse = (reverse * 10) + remainder;
+                number = number / 10;
             }
-            if (k <= 2)
-            {
-                Console.WriteLine("given number is prime number");
-            }
-            else
-            {
-                Console.WriteLine("given number is not a prime number");
-            }
+            Console.WriteLine("after reverse");
+            Console.WriteLine("Reverse number is:{0}",reverse);
             Console.ReadLine();
         }
     }
