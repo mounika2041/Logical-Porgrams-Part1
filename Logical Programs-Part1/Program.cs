@@ -10,18 +10,25 @@ namespace Logical_Programs_Part1
     {
         static void Main(string[] args)
         {
-            int n, f1=0, f2=1, f3;
-            Console.WriteLine("enter the number of element:");
+            int n,sum = 0,r,i;
+            Console.WriteLine("enter a number");
             n = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("The fibonacci Series is:");
-            Console.WriteLine(f1 + ""+ f2+"");
-            f3 = f1 + f2;
-            while(f3<=n)
+            for (i=1;i<n;i++)
             {
-                Console.WriteLine(f3 + "");
-                f1 = f2;
-                f2 = f3;
-                f3 = f1 + f2;
+                r = n % i;
+                if(r==0)
+                {
+                    sum = sum + i;
+                }
+            }
+            Console.WriteLine("sum of divisors are:{0}", sum);
+            if (sum == n)
+            {
+                Console.WriteLine("given number is perfect number");
+            }
+            else
+            {
+                Console.WriteLine("given number is not a perfect number");
             }
             Console.ReadLine();
         }
