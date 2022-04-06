@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logical_Programs_Part1
 {
-    class FibonacciSeries
+    class PrimeNumber
     {
         static void Main(string[] args)
         {
