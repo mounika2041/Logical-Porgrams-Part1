@@ -6,22 +6,29 @@ using System.Threading.Tasks;
 
 namespace Logical_Programs_Part1
 {
-    class ReverseNumber
+    class CouponNumber
     {
         static void Main(string[] args)
         {
-            int number, reverse = 0,remainder;
-            Console.WriteLine("enter a number");
-            number = Convert.ToInt32(Console.ReadLine());
-            while(number>0)
+            Console.WriteLine("please enter how many distinct number of coupons needed :");
+            int num = Convert.ToInt32(Console.ReadLine());
+            Random random = new Random();
+            List<int> list = new List<int>();
+            int i = 0, count = 0;
+            while (i < num)
             {
-                remainder = number % 10;
-                reverse = (reverse * 10) + remainder;
-                number = number / 10;
+                int res = random.Next(1, 101);
+                count++;
+                if (!list.Contains(res))
+                {
+                    list.Add(res);
+                    i++;
+                    Console.WriteLine(res);
+                }
             }
-            Console.WriteLine("after reverse");
-            Console.WriteLine("Reverse number is:{0}",reverse);
+            Console.WriteLine("{0} times used random class to get {1} distinct coupon numbers", count, num);
             Console.ReadLine();
         }
     }
 }
+
