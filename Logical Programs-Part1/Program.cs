@@ -10,25 +10,24 @@ namespace Logical_Programs_Part1
     {
         static void Main(string[] args)
         {
-            int n,sum = 0,r,i;
+            int n, k= 0,r,i;
             Console.WriteLine("enter a number");
             n = Convert.ToInt32(Console.ReadLine());
-            for (i=1;i<n;i++)
+            for (i = 1; i <= n; i++)
             {
                 r = n % i;
-                if(r==0)
+                if (r == 0)
                 {
-                    sum = sum + i;
+                    k++;
                 }
             }
-            Console.WriteLine("sum of divisors are:{0}", sum);
-            if (sum == n)
+            if (k <= 2)
             {
-                Console.WriteLine("given number is perfect number");
+                Console.WriteLine("given number is prime number");
             }
             else
             {
-                Console.WriteLine("given number is not a perfect number");
+                Console.WriteLine("given number is not a prime number");
             }
             Console.ReadLine();
         }
